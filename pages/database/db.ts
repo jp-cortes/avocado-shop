@@ -4,30 +4,30 @@ class Database {
   constructor() {}
 
   async getAll(): Promise<TProduct[]> {
-    const asArray = Object.values(data)
-    await randomDelay()
-    return asArray
+    const asArray = Object.values(data);
+    await randomDelay();
+    return asArray;
   }
 
   async getById(id: string): Promise<TProduct | null> {
     if (!Object.prototype.hasOwnProperty.call(data, id)) {
-      return null
+      return null;
     }
 
-    const entry = data[id]
-    await randomDelay()
-    return entry
+    const entry = data[id];
+    await randomDelay();
+    return entry;
   }
 }
 
 // Let's also add a delay to make it a bit closer to reality
 const randomDelay = () =>
   new Promise((resolve) => {
-    const max = 350
-    const min = 100
-    const delay = Math.floor(Math.random() * (max - min + 1)) + min
+    const max = 350;
+    const min = 100;
+    const delay = Math.floor(Math.random() * (max - min + 1)) + min;
 
-    setTimeout(resolve, delay)
-  })
+    setTimeout(resolve, delay);
+  });
 
 export default Database;
