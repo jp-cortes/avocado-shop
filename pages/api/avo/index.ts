@@ -1,7 +1,7 @@
 // import { IncomingMessage, ServerResponse } from "http";
 import { NextApiRequest, NextApiResponse } from "next";
-import Database from "../../database/db";
 
+import Database from "@database";
 const allAvos = async (request: NextApiRequest, response: NextApiResponse) => { 
     const DB = new Database();
     const allEntries = await DB.getAll();

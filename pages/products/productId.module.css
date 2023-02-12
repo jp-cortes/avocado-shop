@@ -1,0 +1,21 @@
+.table {
+    border-collapse: collapse;
+    font-size: 20px;
+    text-shadow: 2px 5px 5px rgb(166, 236, 139);
+    border-style: double;
+    margin: 0 auto;
+    width: auto;
+
+
+}
+.thead,.tr {
+    border-style: double;
+    }
+    .td {
+        border: double;
+        padding: 8px;
+    }
+    .tRight {
+        padding: 8px;
+    }
+    

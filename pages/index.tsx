@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Link  from 'next/link';
-import Navbar from '../components/Navbar/Navbar';
+
 
 const Home = () => {
   const [products, setProducts] = useState<TProduct[]>([]);
@@ -11,14 +11,25 @@ const Home = () => {
     .then(({data, length}) => setProducts(data))
   }, [])
   return (
-    <div>
-      <Navbar/>
-      <h1>Home</h1>
+    <section>
+     
+      <h1>AvoShop <span>logo</span></h1>
+
+
       {products.map((product) => (
 
-      <Link href={`/products/${product.id}`} legacyBehavior key={product.id}>{product.name}</Link>
+      <Link href={`/products/${product.id}`} legacyBehavior key={product.id}>
+        <div>
+
+        <figure>
+        <img src={`https://platzi-avo.vercel.app/${product.image}`} alt="avocado img" />
+        </figure>
+        <p>{product.name}</p>
+        <p>{`$ ${product.price}`}</p>
+        </div>
+      </Link>
       ))}
-    </div>
+    </section>
   )
 }
 
