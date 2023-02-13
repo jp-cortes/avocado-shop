@@ -1,0 +1,11 @@
+.container {
+    display: grid;
+    text-align: center;
+}
+.title {
+    font-size: 40px;
+}
+.logo {
+    margin-bottom: -17px;
+    width: 60px;
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Link  from 'next/link';
-
+import ProductList from '@components/ProductList/ProductList';
+import Styles from './index.module.css';
 
 const Home = () => {
   const [products, setProducts] = useState<TProduct[]>([]);
@@ -9,26 +9,22 @@ const Home = () => {
     window.fetch('/api/avo')
     .then((response) => response.json())
     .then(({data, length}) => setProducts(data))
-  }, [])
+  }, []);
+
+ if(products === null){ console.log('loading')}
   return (
-    <section>
+    <section className={Styles.container}>
      
-      <h1>AvoShop <span>logo</span></h1>
+      <h1 className={Styles.title}>AvoShop 
+      <img className={Styles.logo}
+      src="https://cdn-icons-png.flaticon.com/512/9472/9472886.png" alt="avocado logo"/>
+      
+      </h1>
+   
+    
+    <ProductList products={products}/>
 
-
-      {products.map((product) => (
-
-      <Link href={`/products/${product.id}`} legacyBehavior key={product.id}>
-        <div>
-
-        <figure>
-        <img src={`https://platzi-avo.vercel.app/${product.image}`} alt="avocado img" />
-        </figure>
-        <p>{product.name}</p>
-        <p>{`$ ${product.price}`}</p>
-        </div>
-      </Link>
-      ))}
+    
     </section>
   )
 }
