@@ -12,7 +12,7 @@ const mapProducts = (products:TProduct[]) =>
         
           <figure className={Styles.containerImg}>
           <img className={Styles.productImg}
-          src={`https://platzi-avo.vercel.app/${image}`} alt={name} />
+          src={image} alt={name} />
           </figure>
           <p className={Styles.productName}>{name}</p>
           <p>{`$ ${price}`}</p>

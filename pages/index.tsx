@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ProductList from '@components/ProductList/ProductList';
 import Styles from './index.module.css';
 import Link from 'next/link';
-
+//  export const getServerSideProps = async () => {}
 const Home = () => {
   const [products, setProducts] = useState<TProduct[]>([]);
 

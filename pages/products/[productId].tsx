@@ -30,7 +30,7 @@ if(product === null){ console.log('loading')}
     
        <div className={Styles.containerProduct}>
 
-       <img src={`https://platzi-avo.vercel.app/${product?.image}`} alt="" />
+       <img src={product?.image} alt="" />
 
         <div className={Styles.containerProductInfo}>
       <div >
