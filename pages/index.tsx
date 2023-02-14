@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ProductList from '@components/ProductList/ProductList';
 import Styles from './index.module.css';
+import Link from 'next/link';
 
 const Home = () => {
   const [products, setProducts] = useState<TProduct[]>([]);
@@ -10,8 +11,8 @@ const Home = () => {
     .then((response) => response.json())
     .then(({data, length}) => setProducts(data))
   }, []);
-
- if(products === null){ console.log('loading')}
+console.log(products, 'homepage')
+//  if(products === ''){ console.log('loading')}
   return (
     <section className={Styles.container}>
      
@@ -21,7 +22,9 @@ const Home = () => {
       
       </h1>
    
-    
+    <Link href="/yes-or-not" legacyBehavior>
+    <a>Should I eat an avocado today?</a>
+    </Link>
     <ProductList products={products}/>
 
     

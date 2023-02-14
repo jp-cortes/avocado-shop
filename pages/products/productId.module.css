@@ -1,18 +1,41 @@
+.containerProduct {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    
+}
+.containerProductInfo {
+    grid-column: 2 ;
+    grid-row: 1/2;
+    text-align: center;
+}
+.containerProductInfo h3 {
+    font-size: 28px;
+}
+
+
 .table {
     border-collapse: collapse;
     font-size: 20px;
-    text-shadow: 2px 5px 5px rgb(166, 236, 139);
-    border-style: double;
+    border-style: solid;
     margin: 0 auto;
-    width: auto;
+    width: 700px;
 
 
 }
-.thead,.tr {
-    border-style: double;
+.table > thead  {
+   
+background-color: rgb(98, 160, 79);
+  color: whitesmoke;  
+}
+
+.tr {
+    border-style: solid;
+
     }
     .td {
-        border: double;
+        border: solid;
         padding: 8px;
     }
     .tRight {

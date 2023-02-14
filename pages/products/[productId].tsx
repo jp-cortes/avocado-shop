@@ -21,28 +21,37 @@ window.fetch(`/api/avo/${productId}`)
 .then((response) => response.json())
   .then((data) => setProduct(data))
   // console.log(product)
-},[productId])
-console.log(product)
+},[])
+if(product === null){ console.log('loading')}
   return (
     <>
 
     <section>
     
-       <div>
-       <img src={`https://platzi-avo.vercel.app/${product?.image}`} alt="" />
-       <h3>{product?.name}</h3>
-       <p>{`$ ${product?.price}`}</p>
+       <div className={Styles.containerProduct}>
 
+       <img src={`https://platzi-avo.vercel.app/${product?.image}`} alt="" />
+
+        <div className={Styles.containerProductInfo}>
+      <div >
+      <h3>{product?.name}</h3>
+       <p>{`$ ${product?.price}`}</p>
+          <input type="number" placeholder='1'/>
+          <button>Add to Cart</button>
+      </div>
        <h4>About this avocado</h4>
        <p>{product?.attributes.description}</p>
+        </div>
        </div>
 
+        <div>
 
        <table className={Styles.table}>
 
         <thead className={Styles.thead}>
-          <tr>
-            <th>Attributes</th>
+          <tr className={Styles.tr}>
+            <th >Attributes</th>
+            <th ></th>
           </tr>
         </thead>
 
@@ -62,6 +71,7 @@ console.log(product)
           </tr>
         </tbody>
        </table>
+        </div>
     </section>
     </>
   );

@@ -1,0 +1,19 @@
+.container{
+    display: grid;
+    text-align: center;
+}
+.article {
+    display: grid;
+    text-align: initial;
+    margin:  0 20px;
+    padding: 40px;
+}
+.article li {
+    font-size: 28px;
+}
+.article h3 {
+    font-size: 28px;
+}
+.article p {
+    font-size: 20px;
+}

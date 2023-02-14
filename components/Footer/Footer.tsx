@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Styles from './Fotter.module.css'
+import Styles from './Footer.module.css'
 export const Footer = () => {
   return (
     <footer className={Styles.footer}>
@@ -35,15 +35,17 @@ export const Footer = () => {
           </p>
         
       </section>
-      <section>
+      <section className={Styles.credits}>
 
-      <span className={Styles.credits}>
-        Icons made by <a  href="https://www.flaticon.com/authors/medz">Medz</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a> Avocado images taken{" "}
+      <span >
+        Icons made by <a  href="https://www.flaticon.com/authors/medz">Medz</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a>
+        <br/>
+         Avocado images taken{" "}
         <a href="https://californiaavocado.com/avocado101/avocado-varieties/">
           from Avocado 101{" "}
         </a>
-        at
-        <a href="https://californiaavocado.com/">California Avocado</a>
+        at 
+        <a href="https://californiaavocado.com/"> California Avocado</a>
       </span>
       </section>
 
