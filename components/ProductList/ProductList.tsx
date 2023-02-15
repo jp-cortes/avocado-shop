@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Styles from './ProductList.module.css';
+import Image from 'next/image';
 type ProductListProps = {
     products: TProduct[];
 }
@@ -11,8 +12,9 @@ const mapProducts = (products:TProduct[]) =>
           <div className={Styles.item}>
         
           <figure className={Styles.containerImg}>
-          <img className={Styles.productImg}
-          src={image} alt={name} />
+          {/* <img className={Styles.productImg}
+          src={image} alt={name} /> */}
+          <Image src={image} width={340} height={340} alt={name} className={Styles.productImg}/>
           </figure>
           <p className={Styles.productName}>{name}</p>
           <p>{`$ ${price}`}</p>

@@ -54,7 +54,7 @@ const avoFacts = [
 const About = () => {
   return (
     <div className={Styles.container}>
-        <h1>13 Surprising Facts About Avocados</h1>
+        <h1>9 Surprising Facts About Avocados</h1>
         
           
         

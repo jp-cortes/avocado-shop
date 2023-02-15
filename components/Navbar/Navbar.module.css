@@ -1,12 +1,38 @@
+.navbar{
+    width: 100%;
+}
+.navbarItems{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .title {
     
     font-size: 30px;
     list-style: none;
 }
+.basket {
+    list-style: none;
+}
+.basket a {
+    text-decoration: none;
+}
 .title a {
     text-decoration: none;
+    color: rgb(98, 160, 79);
 }
 .logo {
     width: 40px;
     margin-bottom: -10px;
+}
+@media (min-width:717px) {
+    .navbar {
+        width: 1000px;
+    }    
+}
+@media (max-width: 490px) {
+    .navbar {
+        width: 500px;
+    }    
 }

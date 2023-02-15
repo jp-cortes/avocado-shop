@@ -38,7 +38,8 @@ export const Footer = () => {
       <section className={Styles.credits}>
 
       <span >
-        Icons made by <a  href="https://www.flaticon.com/authors/medz">Medz</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a>
+        Avocado Icon made by <a  href="https://www.flaticon.com/authors/medz">Medz</a> and Basket icon created by<a href='https://www.flaticon.com/free-icons/basket'> Freepik - Flaticon</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a>
+        
         <br/>
          Avocado images taken{" "}
         <a href="https://californiaavocado.com/avocado101/avocado-varieties/">

@@ -13,14 +13,28 @@
 .containerProductInfo h3 {
     font-size: 28px;
 }
+.input {
+padding: 8px;
+font-weight: bold;
+border-radius: 8px;
+margin-right: 12px;
 
-
+}
+.button {
+    background-color: rgb(98, 160, 79);
+    color: whitesmoke; 
+    font-weight: bolder;
+    padding: 8px;
+    border-radius: 8px;   
+     
+}
 .table {
     border-collapse: collapse;
     font-size: 20px;
     border-style: solid;
     margin: 0 auto;
-    width: 700px;
+    max-width: 700px;
+    max-width: 500px;
 
 
 }
@@ -41,4 +55,12 @@ background-color: rgb(98, 160, 79);
     .tRight {
         padding: 8px;
     }
-    
+   @media (max-width: 700px) {
+    .containerProduct {
+        display: flex;
+        flex-direction: column;
+        
+        justify-content: center;
+        
+    }
+   } 

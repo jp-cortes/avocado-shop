@@ -1,18 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import ProductList from '@components/ProductList/ProductList';
+import fetch from 'isomorphic-unfetch';
 import Styles from './index.module.css';
 import Link from 'next/link';
-//  export const getServerSideProps = async () => {}
-const Home = () => {
-  const [products, setProducts] = useState<TProduct[]>([]);
 
-  useEffect(() => {
-    window.fetch('/api/avo')
-    .then((response) => response.json())
-    .then(({data, length}) => setProducts(data))
-  }, []);
-console.log(products, 'homepage')
-//  if(products === ''){ console.log('loading')}
+
+export const getStaticProps = async () => {
+  const response = await fetch('https://avocado-shop.vercel.app/api/avo')
+   const { data: products }:TAPIAvoResponse = await response.json()
+   return{
+     props: {
+       products,
+     }
+   }
+  }
+const Home = ({ products }: { products:TProduct[] }) => {
+ 
+// console.log(products, 'homepage')
+
   return (
     <section className={Styles.container}>
      
@@ -23,7 +28,7 @@ console.log(products, 'homepage')
       </h1>
    
     <Link href="/yes-or-not" legacyBehavior>
-    <a>Should I eat an avocado today?</a>
+    <a className={Styles.question}>Should I eat an avocado today?</a>
     </Link>
     <ProductList products={products}/>
 

@@ -1,28 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import React from 'react';
+
 import Styles  from './productId.module.css';
+import { GetStaticProps } from 'next';
+
+export const getStaticPaths = async () => {
+  const response = await fetch('https://avocado-shop.vercel.app/api/avo')
+   const { data: product }:TAPIAvoResponse = await response.json()
+
+   const paths = product.map(({ id }) => ({
+    params: {
+      id,//name of the file [id]
+    }
+   }))
+  return {
+    paths,
+    fallback: false
+}
+}
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const id = params?.id as string
+  const response = await fetch(`https://avocado-shop.vercel.app/api/avo/${id}`);
+   const product:TProduct = await response.json();
+   return{
+     props: {
+       product,
+     }
+   }
+  }
+
+const ProductItem = ({ product } : { product: TProduct}) => {
 
 
-
-const ProductItem = () => {
-const { query: { productId } } = useRouter();
-const [product, setProduct] = useState<TProduct>();
-
-useEffect( () => {
-
-//   const cal = async () => {
-//      const res = await window.fetch(`/api/avo/${productId}`)
-//      const data =  await res.json()
-//      setProduct(data)
-     
-// } 
-// if(productId) cal() 
-window.fetch(`/api/avo/${productId}`)
-.then((response) => response.json())
-  .then((data) => setProduct(data))
-  // console.log(product)
-},[])
-if(product === null){ console.log('loading')}
   return (
     <>
 
@@ -36,8 +45,8 @@ if(product === null){ console.log('loading')}
       <div >
       <h3>{product?.name}</h3>
        <p>{`$ ${product?.price}`}</p>
-          <input type="number" placeholder='1'/>
-          <button>Add to Cart</button>
+          <input className={Styles.input} type="number" placeholder='1'/>
+          <button className={Styles.button}>Add to Cart</button>
       </div>
        <h4>About this avocado</h4>
        <p>{product?.attributes.description}</p>

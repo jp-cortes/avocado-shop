@@ -7,6 +7,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "export": "next export",
     "dev:inspect": "npm --node-options=--inspect=0.0.0.0:9229 run dev"
   },
   "keywords": [],
