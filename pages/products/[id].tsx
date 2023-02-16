@@ -1,7 +1,12 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import { useCartMutations } from 'store/Cart';
 import Styles  from './productId.module.css';
 import { GetStaticProps } from 'next';
+import Layout from '@components/Layout/Layout';
+
+
+
+
 
 export const getStaticPaths = async () => {
   const response = await fetch('https://avocado-shop.vercel.app/api/avo')
@@ -31,58 +36,99 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 const ProductItem = ({ product } : { product: TProduct}) => {
 
+    const [pushItem, setPushItem] = useState('');
+    const [quantity, setQuantity] = useState(1);
+    const { addToCart } = useCartMutations();
+
+  const validate = (quantity: number) => {
+    let error = '';
+    if (quantity < 1) error = "Can't be blank";
+  
+    return error;
+  }
+   
+    
+  const handleClick = () => {
+    setTimeout(() => {
+      const error = validate(quantity);
+    setPushItem(error);
+    if (!error) {
+          addToCart(product, quantity);
+          setQuantity(quantity);
+          setPushItem('');
+        
+      } else {
+      setPushItem('Something went wrong ❌');
+    }
+    }, 700);
+    setPushItem('Avo added in cart ✔');
+  }
+
+  const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) =>
+    setQuantity(parseInt(target.value, 10))
+
 
   return (
-    <>
-
-    <section>
+    <Layout>
+      <section>
     
-       <div className={Styles.containerProduct}>
+    <div className={Styles.containerProduct}>
 
-       <img src={product?.image} alt="" />
+    <img src={product?.image} alt="" />
 
-        <div className={Styles.containerProductInfo}>
-      <div >
-      <h3>{product?.name}</h3>
-       <p>{`$ ${product?.price}`}</p>
-          <input className={Styles.input} type="number" placeholder='1'/>
-          <button className={Styles.button}>Add to Cart</button>
-      </div>
-       <h4>About this avocado</h4>
-       <p>{product?.attributes.description}</p>
-        </div>
-       </div>
+     <div className={Styles.containerProductInfo}>
+   <div >
+   <h3>{product?.name}</h3>
+    <p>{`$ ${product?.price}`}</p>
+       <input 
+       onChange={handleChange}
+       className={Styles.input} 
+       type="number" placeholder='1'
+       min={1}
 
-        <div>
+       />
+       <button 
+       onClick={handleClick}
+       className={pushItem ? Styles.buttonActive : Styles.button}>
+         Add to Cart
+         </button>
+   </div>
+    <p>{pushItem}</p>
+    <h4>About this avocado</h4>
+    <p>{product?.attributes.description}</p>
+     </div>
+    </div>
 
-       <table className={Styles.table}>
+     <div>
 
-        <thead className={Styles.thead}>
-          <tr className={Styles.tr}>
-            <th >Attributes</th>
-            <th ></th>
-          </tr>
-        </thead>
+    <table className={Styles.table}>
 
-        <tbody>
+     <thead className={Styles.thead}>
+       <tr className={Styles.tr}>
+         <th >Attributes</th>
+         <th ></th>
+       </tr>
+     </thead>
 
-          <tr className={Styles.tr}>
-          <td className={Styles.td}>Shape</td>
-         <td className={Styles.tRight}>{product?.attributes.shape}</td>
-          </tr>
-          <tr className={Styles.tr}>
-          <td className={Styles.td}>Hardiness</td>
-         <td className={Styles.tRight}>{product?.attributes.hardiness}</td>
-          </tr>
-          <tr className={Styles.tr}>
-          <td className={Styles.td}>Taste</td>
-         <td className={Styles.tRight}>{product?.attributes.taste}</td>
-          </tr>
-        </tbody>
-       </table>
-        </div>
-    </section>
-    </>
+     <tbody>
+
+       <tr className={Styles.tr}>
+       <td className={Styles.td}>Shape</td>
+      <td className={Styles.tRight}>{product?.attributes.shape}</td>
+       </tr>
+       <tr className={Styles.tr}>
+       <td className={Styles.td}>Hardiness</td>
+      <td className={Styles.tRight}>{product?.attributes.hardiness}</td>
+       </tr>
+       <tr className={Styles.tr}>
+       <td className={Styles.td}>Taste</td>
+      <td className={Styles.tRight}>{product?.attributes.taste}</td>
+       </tr>
+     </tbody>
+    </table>
+     </div>
+ </section>
+    </Layout>
   );
 }
 

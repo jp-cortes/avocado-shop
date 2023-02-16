@@ -28,6 +28,14 @@ margin-right: 12px;
     border-radius: 8px;   
      
 }
+.buttonActive {
+    background-color: rgb(209, 153, 153);
+    color: whitesmoke; 
+    font-weight: bolder;
+    padding: 8px;
+    border-radius: 8px;   
+     
+}
 .table {
     border-collapse: collapse;
     font-size: 20px;

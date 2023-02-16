@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "NODE_OPTIONS='--inspect' next",
     "build": "next build",
     "start": "next start",
     "export": "next export",
@@ -14,6 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@next/font": "^13.1.6",
     "isomorphic-unfetch": "^4.0.2",
     "next": "^13.1.6",
     "react": "^18.2.0",

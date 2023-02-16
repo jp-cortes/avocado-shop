@@ -1,3 +1,4 @@
+import Layout from '@components/Layout/Layout';
 import React from 'react';
 import Styles from './about.module.css';
 
@@ -53,7 +54,8 @@ const avoFacts = [
 
 const About = () => {
   return (
-    <div className={Styles.container}>
+    <Layout>
+      <section className={Styles.container}>
         <h1>9 Surprising Facts About Avocados</h1>
         
           
@@ -79,7 +81,8 @@ const About = () => {
           ))}
         </ol>
       
-    </div>
+    </section>
+    </Layout>
   );
 }
 

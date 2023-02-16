@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
+import { useCart } from 'store/Cart';
 import Styles from './Navbar.module.css';
  export const Navbar = () => {
+  const { count: cartCount } = useCart()
   return (
     <nav className={Styles.navbar}>
         <ul className={Styles.navbarItems}>
@@ -16,12 +18,12 @@ import Styles from './Navbar.module.css';
                 
             </li>
             <li className={Styles.basket}>
-                <Link href="#" legacyBehavior>
+                <Link href="/cart" legacyBehavior>
                   <a >
                     
                     <img className={Styles.logo}
                     src="https://cdn-icons-png.flaticon.com/512/1685/1685462.png" alt="basket logo"/>
-                    (0)
+                    {cartCount > 9 ? '9+' : `(${cartCount})`}
                     </a>
                   </Link>
                 

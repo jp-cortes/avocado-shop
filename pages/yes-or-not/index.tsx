@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import React, { useState } from 'react';
 import Styles from './index.module.css';
 
 const YesOrNot = () => {
-  const [answer, setAnswer] = useState('Yes');
+  const [answer, setAnswer] = useState('NO');
   const [action, setAction] = useState(true);
 
 const handleAnswer = () => {
@@ -26,6 +27,10 @@ setAction(false);
     <div className={Styles.container}>
       <div className={Styles.answer}>
       <p className={Styles.text}>{answer}</p>
+      <p className={Styles.text}>
+        {answer === 'NO' ? '🤔' : '😁'}
+        </p>
+          
     <button className={action ? Styles.button : Styles.buttonInActive}
     onClick={handleAnswer}
     >Try again</button>

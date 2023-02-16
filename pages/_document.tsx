@@ -4,12 +4,13 @@ export default function Document() {
   return (
     <Html>
       <Head >
+        
         {/* favicon */}
         {/* webfont */}
         {/* stylesheet */}
         {/* scripts */}
       </Head>
-      <body className="extend-body">
+      <body style={{fontFamily: 'Helvetica'}}>
         <Main />
         <NextScript />
       </body>
