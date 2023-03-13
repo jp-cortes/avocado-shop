@@ -14,7 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 { shipping_rate: 'shr_1MlAawHdG9PE3RLIORXL8Y4g' },
                 { shipping_rate: 'shr_1MlAdnHdG9PE3RLIHx1bLgXi' },
             ],
-            line_items: req.body.map((items:TProduct) => {
+            line_items: req.body.map((items: { name: string; image: string; price: number; quantity: number; }) => {
              
                 // console.log('img',items.quantity)
                 return {
