@@ -1,12 +1,13 @@
 .container {
 
     display: grid;
-    grid-template-columns: 500px 500px;
+    grid-template-columns: 450px 450px;
     gap: 8px;
     justify-content: center;
 
 }
 .item {
+    width: 350px;
     place-self: center;
     border: double;
     border-radius: 8px;

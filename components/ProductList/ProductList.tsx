@@ -14,7 +14,7 @@ const mapProducts = (products:TProduct[]) =>
           <figure className={Styles.containerImg}>
           {/* <img className={Styles.productImg}
           src={image} alt={name} /> */}
-          <Image src={image} width={340} height={340} alt={name} className={Styles.productImg}/>
+          <Image src={image} width={240} height={240} alt={name} className={Styles.productImg}/>
           </figure>
           <p className={Styles.productName}>{name}</p>
           <p>{`$ ${price}`}</p>
