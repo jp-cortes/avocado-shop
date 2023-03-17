@@ -3,6 +3,7 @@ import { useCartMutations } from "store/Cart";
 import Styles from "./productId.module.css";
 import { GetStaticProps } from "next";
 import Layout from "@components/Layout/Layout";
+import Image from "next/image";
 
 export const getStaticPaths = async () => {
   const response = await fetch("https://avocado-shop.vercel.app/api/avo");
@@ -62,9 +63,9 @@ const ProductItem = ({ product }: { product: TProduct }) => {
 
   return (
     <Layout>
-      <section>
+      <section className={Styles.container}>
         <div className={Styles.containerProduct}>
-          <img src={product?.image} alt="" />
+          <Image src={product?.image} alt="" width={380} height={400} />
 
           <div className={Styles.containerProductInfo}>
             <div>

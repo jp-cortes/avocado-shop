@@ -4,6 +4,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
+    console.log(req.body)
     try {
         const params = {
             submit_type: 'pay',
@@ -15,16 +16,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 { shipping_rate: 'shr_1MlAdnHdG9PE3RLIHx1bLgXi' },
             ],
             line_items: req.body.map((items: { name: string; image: string; price: number; quantity: number; }) => {
-             
+             let amount = Math.ceil(items.price)
                 // console.log('img',items.quantity)
                 return {
                     price_data: {
                     currency: 'eur',
                     product_data: {
                         name: items.name,
-                        image: items.image
+                        images: items.image
                     },
-                    unit_amount: items.price * 100,
+                    unit_amount: amount * 100,
                 },
                 adjustable_quantity: {
                     enabled: true,
@@ -39,6 +40,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       // Create Checkout Sessions from body params.
       const session = await stripe.checkout.sessions.create(params);
       res.status(200).json(session);
+      // console.log(session, 'session')
     } catch (err) {
       res.status(err.statusCode || 500).json(err.message);
     }

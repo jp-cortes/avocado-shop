@@ -1,3 +1,6 @@
+.container{
+    display: grid;
+}
 .containerProduct {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -25,7 +28,8 @@ margin-right: 12px;
     color: whitesmoke; 
     font-weight: bolder;
     padding: 8px;
-    border-radius: 8px;   
+    border-radius: 8px;
+    margin-top: 20px;     
      
 }
 .buttonActive {
@@ -64,11 +68,20 @@ background-color: rgb(98, 160, 79);
         padding: 8px;
     }
    @media (max-width: 700px) {
+    .container{
+        width: 600px;
+        padding: 0 20px;
+    }
     .containerProduct {
+        justify-self: center;
         display: flex;
         flex-direction: column;
         
         justify-content: center;
         
     }
+    .containerProduct img {
+        margin: 0 auto;
+    }
+    
    } 

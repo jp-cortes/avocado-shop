@@ -4,8 +4,7 @@
     align-items: center;
 }
 .containerOfProducts {
-    width: 700px;
-    min-width: 500px;
+    min-width: 475px;
 }
 .containerProduct {
     background-color: rgb(207, 225, 202);
@@ -24,10 +23,10 @@
     font-size: large;
     border: none;
 }
-.totalProducts {
+/* .totalProducts {
     font-size: 24px;
     font-weight: bold;
-}
+} */
  .checkoutButton {
     background-color: black;
     color: whitesmoke;
@@ -35,3 +34,22 @@
     padding: 8px;
     border-radius: 8px;
  }
+ .emptyCart {
+    background-color: rgb(207, 225, 202);
+    width: 100%;
+   
+    text-align: center;
+    
+    padding: 8px;
+    border-radius: 8px;
+    
+ }
+
+ @media (max-width: 490px) {
+    .container{
+        width: 600px;
+    }
+    .containerOfProducts {
+        margin: 0 auto;
+    }  
+}

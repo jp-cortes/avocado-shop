@@ -24,9 +24,11 @@ const Cart = () => {
     if(response.status === 500) return;
 
     const data = await response.json();
-console.log(response, 'data')
-    stripe.redirectToCheckout({ sessionId: data.id});
+// console.log(response, 'data')
+// console.log(items, 'item')
+    stripe.redirectToCheckout({ items: data});
   }
+  
   return (
     <Layout>
       <section className={Styles.container}>
@@ -42,12 +44,14 @@ console.log(response, 'data')
               >
                 ❌
               </button>
-            </div>
+            </div> 
           ))}
-          <p className={Styles.totalProducts}>Total: $ {subTotal.toFixed(2)}</p>
+          {/* <p className={Styles.totalProducts}>Total: $ {subTotal.toFixed(2)}</p> */}
+          {items.length === 0 ? 
+          <div className={Styles.emptyCart}><span>Your cart is currently empty</span></div> : 
           <button 
           onClick={handleCheckout}
-          className={Styles.checkoutButton}>Checkout</button>
+          className={Styles.checkoutButton}>Checkout</button> }
         </div>
       </section>
     </Layout>

@@ -1,8 +1,7 @@
 .navbar{
-    width: 100%;
+    width: 95%;
 }
 .navbarItems{
-    width: 100%;
     display: flex;
     justify-content: space-between;
 }
@@ -26,13 +25,9 @@
     width: 40px;
     margin-bottom: -10px;
 }
-@media (min-width:717px) {
-    .navbar {
-        width: 1000px;
-    }    
-}
+
 @media (max-width: 490px) {
     .navbar {
-        width: 500px;
+        width: 430px;
     }    
 }
