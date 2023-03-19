@@ -26,7 +26,7 @@ const Cart = () => {
     const data = await response.json();
 // console.log(response, 'data')
 // console.log(items, 'item')
-    stripe.redirectToCheckout({ items: data});
+    stripe.redirectToCheckout({ sessionId: data.id});
   }
   
   return (
@@ -37,7 +37,7 @@ const Cart = () => {
             <div className={Styles.containerProduct}>
               <Image src={item.image} width="50" height="50" alt={item.name} />
               <p>{`Quantity: ${item.quantity}`}</p>
-              <p> Subtotal: $ {(item.price * item.quantity).toFixed(2)}</p>
+              <p> Subtotal: € {(item.price * item.quantity).toFixed(2)}</p>
               <button
                 className={Styles.eliminateProduct}
                 onClick={() => removeFromCart(item)}
@@ -51,7 +51,7 @@ const Cart = () => {
           <div className={Styles.emptyCart}><span>Your cart is currently empty</span></div> : 
           <button 
           onClick={handleCheckout}
-          className={Styles.checkoutButton}>Checkout</button> }
+          className={Styles.checkoutButton}>Pay with Stripe</button> }
         </div>
       </section>
     </Layout>

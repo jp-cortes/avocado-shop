@@ -23,19 +23,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     currency: 'eur',
                     product_data: {
                         name: items.name,
-                        images: items.image
+                        images: [`https://avocado-shop.vercel.app/${items.image}`],
                     },
                     unit_amount: amount * 100,
                 },
                 adjustable_quantity: {
                     enabled: true,
-                    minimun: 1
+                    minimum: 1
                 }, 
                 quantity: items.quantity,
                 }
             }),
-            success_url: `${req.headers.origin}/?success=true`,
-            cancel_url: `${req.headers.origin}/?canceled=true`,
+            success_url: `${req.headers.origin}/success`,
+            cancel_url: `${req.headers.origin}/canceled`,
           }
       // Create Checkout Sessions from body params.
       const session = await stripe.checkout.sessions.create(params);
