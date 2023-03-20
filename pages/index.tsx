@@ -3,7 +3,9 @@ import ProductList from "@components/ProductList/ProductList";
 import fetch from "isomorphic-unfetch";
 import Styles from "./index.module.css";
 import Link from "next/link";
+import Image from "next/image";
 import Layout from "@components/Layout/Layout";
+import Logo from '../public/images/icons/avocado.png'
 
 export const getStaticProps = async () => {
   const response = await fetch("https://avocado-shop.vercel.app/api/avo");
@@ -22,9 +24,11 @@ const Home = ({ products }: { products: TProduct[] }) => {
       <section className={Styles.container}>
         <h1 className={Styles.title}>
           AvoShop
-          <img
+          <Image
+          width={60}
+          height={60}
             className={Styles.logo}
-            src="https://cdn-icons-png.flaticon.com/512/9472/9472886.png"
+            src={Logo}
             alt="avocado logo"
           />
         </h1>

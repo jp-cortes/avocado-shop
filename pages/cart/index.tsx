@@ -48,7 +48,7 @@ const Cart = () => {
           ))}
           {/* <p className={Styles.totalProducts}>Total: $ {subTotal.toFixed(2)}</p> */}
           {items.length === 0 ? 
-          <div className={Styles.emptyCart}><span>Your cart is currently empty</span></div> : 
+          <div className={Styles.emptyCart}><span>Your Basket is currently empty</span></div> : 
           <button 
           onClick={handleCheckout}
           className={Styles.checkoutButton}>Pay with Stripe</button> }

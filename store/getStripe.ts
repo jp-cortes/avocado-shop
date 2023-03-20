@@ -1,14 +1,7 @@
 import { loadStripe, Stripe } from '@stripe/stripe-js';
-type StripeConstructorOptions ={
-    method: string,
-    headers : object,
-    body: JSON
-  }
- type LoadStripe = {
-    publishableKey: string,
-    options?: StripeConstructorOptions,
- }
-let stripePromise: any;
+
+
+let stripePromise: Promise<Stripe>;
 
 const getStripe = () => {
     if(!stripePromise) {

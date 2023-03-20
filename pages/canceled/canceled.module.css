@@ -1,0 +1,74 @@
+.cancel{
+    width: 1000px;
+  margin: auto;
+  margin-top: 160px;
+    background-color: #dcdcdc;
+    padding: 50px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .cancel .icon {
+     color: rgb(250, 6, 6);
+     font-size: 40px;
+  }
+  .cancel h2{
+    text-transform: capitalize;
+    margin: 0;
+    font-weight: 900;
+    font-size: 40px;
+    color:#324d67;
+  }
+ 
+  .cancel p{
+    font-size: 20px;
+    font-weight: 600;
+  }
+ 
+
+  .button {
+    background-color: rgb(98, 160, 79);
+    color: whitesmoke; 
+    font-weight: bolder;
+    padding: 8px;
+    border-radius: 8px;
+    margin: 20px;  
+    cursor: pointer;   
+     
+}
+.button:hover {
+  background-color: rgb(209, 153, 153);
+}
+
+
+
+@media (max-width:800px) {
+  
+
+
+.cancel-wrapper{
+  min-height: 69vh;
+  width: 770px;
+}
+ .cancel {
+   width: 370px;
+  margin-top: 100px;
+  padding: 20px;
+  height: 350px;
+}
+
+.cancel h2{
+  font-size: 17px;
+}
+
+
+}
+@media (max-width:600px) {
+  .cancel-wrapper{
+    min-height: 69vh;
+    width: 600px;
+  }
+}

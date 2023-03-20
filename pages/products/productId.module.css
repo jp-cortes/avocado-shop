@@ -30,7 +30,7 @@ margin-right: 12px;
     padding: 8px;
     border-radius: 8px;
     margin-top: 20px;     
-     
+    cursor: pointer;
 }
 .buttonActive {
     background-color: rgb(209, 153, 153);
