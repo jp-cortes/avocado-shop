@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useCart, useCartMutations } from 'store/Cart';
 import Link from 'next/link';
 import Layout from '@components/Layout/Layout';
 import Styles from './canceled.module.css';
 import { BsFillBagXFill } from 'react-icons/bs';
 
-// import { useStateContext } from '../context/StateContext';
-// import { runFireworks } from '../lib/utils';
+
 
 const Canceled = () => {  
+  const { items, subTotal } = useCart();
+  const { removeFromCart } = useCartMutations();
+let emptyCart = items.forEach(item =>  removeFromCart(item));
+
+    useEffect(() => {
+      emptyCart
+    }, [])
 
   return (
     <Layout>

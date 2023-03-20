@@ -33,6 +33,18 @@
     font-weight: bold;
     padding: 8px;
     border-radius: 8px;
+    border: none;
+    cursor: pointer;
+ }
+ .cancelPayment {
+    background-color: rgb(241, 35, 35);
+    color: whitesmoke;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 8px;
+    margin-left: 12px;
+    border: none;
+    cursor: pointer;
  }
  .emptyCart {
     background-color: rgb(207, 225, 202);

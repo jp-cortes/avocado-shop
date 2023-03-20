@@ -4,12 +4,15 @@ import Image from "next/image";
 import { useCart, useCartMutations } from "store/Cart";
 import Styles from "./cart.module.css";
 import { getStripe } from "store/getStripe";
+import Link from "next/link";
 
 
 const Cart = () => {
   const { items, subTotal } = useCart();
   const { removeFromCart } = useCartMutations();
   // console.log(items)
+
+  //integration with stripe.
   const handleCheckout = async () => {
     const stripe =  await getStripe();
 
@@ -24,10 +27,10 @@ const Cart = () => {
     if(response.status === 500) return;
 
     const data = await response.json();
-    // console.log(items, 'item')
+   
   
    const { error } = await stripe.redirectToCheckout({ sessionId: data.id });
-   console.warn(error, ' error cart');
+   console.warn(error);
   }
   
   return (
@@ -47,12 +50,24 @@ const Cart = () => {
               </button>
             </div> 
           ))}
-          {/* <p className={Styles.totalProducts}>Total: $ {subTotal.toFixed(2)}</p> */}
+          
           {items.length === 0 ? 
           <div className={Styles.emptyCart}><span>Your Basket is currently empty</span></div> : 
+          <>
+          <Link href="/success">
           <button 
-          onClick={handleCheckout}
-          className={Styles.checkoutButton}>Pay with Stripe</button> }
+          onClick={() => {}}
+          className={Styles.checkoutButton}>Check out</button> 
+          </Link>
+
+
+          <Link href="/canceled">
+          <button 
+          onClick={() => {}}
+          className={Styles.cancelPayment}>Cancel Payment</button> 
+          </Link>
+          </>
+          }
         </div>
       </section>
     </Layout>
