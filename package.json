@@ -17,6 +17,7 @@
     "@next/font": "^13.1.6",
     "@stripe/stripe-js": "^1.49.0",
     "@types/canvas-confetti": "^1.6.0",
+    "@types/stripe": "^8.0.417",
     "canvas-confetti": "^1.6.0",
     "isomorphic-unfetch": "^4.0.2",
     "next": "^13.2.4",
