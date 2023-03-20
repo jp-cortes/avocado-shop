@@ -24,10 +24,10 @@ const Cart = () => {
     if(response.status === 500) return;
 
     const data = await response.json();
-console.log(data, 'data')
-// console.log(items, 'item')
+    // console.log(items, 'item')
+  
    const { error } = await stripe.redirectToCheckout({ sessionId: data.id });
-   console.warn(error);
+   console.warn(error, ' error cart');
   }
   
   return (
@@ -35,7 +35,7 @@ console.log(data, 'data')
       <section className={Styles.container}>
         <div className={Styles.containerOfProducts}>
           {items.map((item) => (
-            <div className={Styles.containerProduct}>
+            <div className={Styles.containerProduct} key={item.id}>
               <Image src={item.image} width="50" height="50" alt={item.name} />
               <p>{`Quantity: ${item.quantity}`}</p>
               <p> Subtotal: € {(item.price * item.quantity).toFixed(2)}</p>
