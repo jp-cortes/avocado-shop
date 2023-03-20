@@ -31,6 +31,7 @@ margin-right: 12px;
     border-radius: 8px;
     margin-top: 20px;     
     cursor: pointer;
+    border: none;
 }
 .buttonActive {
     background-color: rgb(209, 153, 153);

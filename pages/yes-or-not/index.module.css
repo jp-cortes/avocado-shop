@@ -25,6 +25,7 @@
     font-size: 16px;
     font-weight: bolder;
     color: whitesmoke;
+    border: none;
 }
 .buttonInActive {
     background-color: rgb(209, 153, 153);
