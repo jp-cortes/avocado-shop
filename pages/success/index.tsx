@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import Layout from '@components/Layout/Layout';
-import { useCart, useCartMutations } from 'store/Cart';
 import { BsBagCheckFill } from 'react-icons/bs';
 import { runFireworks } from 'utils/Confetti';
 import Styles from './success.module.css';
@@ -10,14 +9,9 @@ import Styles from './success.module.css';
 
 const Success = () => {
 
-  const { items, subTotal } = useCart();
-  const { removeFromCart } = useCartMutations();
-  
-  let emptyCart = items.forEach(item =>  removeFromCart(item));
-
     useEffect(() => {
       runFireworks()
-      emptyCart
+   
     }, [])
   
 
