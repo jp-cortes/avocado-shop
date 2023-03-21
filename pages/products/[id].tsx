@@ -82,7 +82,7 @@ const ProductItem = ({ product }: { product: TProduct }) => {
                 onClick={handleClick}
                 className={pushItem ? Styles.buttonActive : Styles.button}
               >
-                Add to Cart
+                Add to Basket
               </button>
             </div>
             <p>{pushItem}</p>

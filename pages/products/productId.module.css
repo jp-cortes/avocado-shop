@@ -39,7 +39,7 @@ margin-right: 12px;
     font-weight: bolder;
     padding: 8px;
     border-radius: 8px;   
-     
+    border: none;
 }
 .table {
     border-collapse: collapse;
