@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ProductList from "@components/ProductList/ProductList";
 import fetch from "isomorphic-unfetch";
 import Styles from "./index.module.css";
@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Layout from "@components/Layout/Layout";
 import Logo from '../public/images/icons/avocado.png'
+
 
 export const getStaticProps = async () => {
   const response = await fetch("https://avocado-shop.vercel.app/api/avo");

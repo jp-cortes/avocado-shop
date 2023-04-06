@@ -4,6 +4,7 @@ import Styles from "./productId.module.css";
 import { GetStaticProps } from "next";
 import Layout from "@components/Layout/Layout";
 import Image from "next/image";
+import Link from "next/link";
 
 export const getStaticPaths = async () => {
   const response = await fetch("https://avocado-shop.vercel.app/api/avo");
@@ -55,7 +56,7 @@ const ProductItem = ({ product }: { product: TProduct }) => {
         setPushItem("Something went wrong ❌");
       }
     }, 700);
-    setPushItem("Avo added in cart ✔");
+    setPushItem("Avo added in basket ✔");
   };
 
   const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) =>
@@ -70,7 +71,7 @@ const ProductItem = ({ product }: { product: TProduct }) => {
           <div className={Styles.containerProductInfo}>
             <div>
               <h3>{product?.name}</h3>
-              <p>{`$ ${product?.price}`}</p>
+              <p>{`€ ${product?.price}`}</p>
               <input
                 onChange={handleChange}
                 className={Styles.input}
@@ -84,6 +85,12 @@ const ProductItem = ({ product }: { product: TProduct }) => {
               >
                 Add to Basket
               </button>
+              <Link
+              className={Styles.checkoutButton}
+              href={'/cart'}
+              >
+                Go to Basket
+              </Link>
             </div>
             <p>{pushItem}</p>
             <h4>About this avocado</h4>

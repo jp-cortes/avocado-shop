@@ -3,9 +3,10 @@
 }
 .containerProduct {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
     grid-template-rows: auto auto;
     justify-content: center;
+    justify-self: center;
     
 }
 .containerProductInfo {
@@ -29,17 +30,31 @@ margin-right: 12px;
     font-weight: bolder;
     padding: 8px;
     border-radius: 8px;
-    margin-top: 20px;     
+    margin: 20px ;     
     cursor: pointer;
     border: none;
 }
 .buttonActive {
     background-color: rgb(209, 153, 153);
     color: whitesmoke; 
+    margin: 0 20px ; 
     font-weight: bolder;
     padding: 8px;
     border-radius: 8px;   
     border: none;
+}
+.checkoutButton {
+    background-color: rgb(144, 80, 31);
+    color: whitesmoke; 
+    font-weight: bolder;
+    padding: 8px;
+    border-radius: 8px;
+    margin: 20px auto;     
+    text-decoration: none;
+    border: none;
+}
+.checkoutButton:hover {
+    background-color: rgb(219, 135, 75);
 }
 .table {
     border-collapse: collapse;

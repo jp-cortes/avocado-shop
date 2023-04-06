@@ -1,7 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import React, { useState } from "react";
+import Layout from "@components/Layout/Layout";
 import Styles from "./index.module.css";
+
 
 const YesOrNot = () => {
   const [answer, setAnswer] = useState("NO");
@@ -22,7 +23,9 @@ const YesOrNot = () => {
   };
 
   return (
+    <Layout>
     <div className={Styles.container}>
+      
       <div className={Styles.answer}>
         <p className={Styles.text}>{answer}</p>
         <p className={Styles.text}>{answer === "NO" ? "🤔" : "😁"}</p>
@@ -38,6 +41,7 @@ const YesOrNot = () => {
         </Link>
       </div>
     </div>
+    </Layout>
   );
 };
 export default YesOrNot;

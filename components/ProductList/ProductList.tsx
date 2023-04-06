@@ -8,16 +8,19 @@ type ProductListProps = {
 const mapProducts = (products:TProduct[]) => 
       products.map(({id, image, name, price}) => (
 
-        <Link href={`/products/${id}`} legacyBehavior key={id}>
+        <Link href={`/products/${id}`} legacyBehavior key={id} style={{ position: 'relative'}}>
+          <div className={Styles.containerProduct}>
           <div className={Styles.item}>
         
-          <figure className={Styles.containerImg}>
-          {/* <img className={Styles.productImg}
-          src={image} alt={name} /> */}
-          <Image src={image} width={240} height={240} alt={name} className={Styles.productImg}/>
-          </figure>
-          <p className={Styles.productName}>{name}</p>
-          <p>{`€ ${price}`}</p>
+        <figure className={Styles.containerImg}>
+    
+        <Image src={image} width={240} height={240} alt={name} className={Styles.productImg}/>
+        </figure>
+        <div className={Styles.productInfo}>
+        <p className={Styles.productName}>{name}</p>
+        <p>{`€ ${price}`}</p>
+        </div>
+        </div>
           </div>
         </Link>
         ))

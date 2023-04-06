@@ -2,8 +2,9 @@ import React from "react";
 import Layout from "@components/Layout/Layout";
 import Image from "next/image";
 import { useCart, useCartMutations } from "store/Cart";
-import Styles from "./cart.module.css";
 import { getStripe } from "store/getStripe";
+import Swal from 'sweetalert2';
+import Styles from "./cart.module.css";
 
 
 
@@ -14,7 +15,13 @@ const Cart = () => {
   
   //integration with stripe.
   const handleCheckout = async () => {
-    window.alert('This is just a project, Do not provide your real information')
+ 
+    Swal.fire({
+      position: 'top',
+      icon: 'info',
+      title: 'You will be redirected to Stripe demo page',
+      showConfirmButton: true,
+    })
     
     const stripe =  await getStripe();
 
