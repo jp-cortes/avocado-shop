@@ -5,7 +5,7 @@
 * List of avocados for sale
 * Avocado detail page with information about the avocado
 * Cart functionality to add and remove items
-* Checkout page to finalize purchase (comming soon)
+* Checkout page to finalize purchase
 * Responsive design for mobile and desktop
 
 # Getting Started
@@ -21,3 +21,4 @@ To get started with the avocado shop, follow these steps:
 * Next.js
 * React
 * TypeScript
+* Stripe
