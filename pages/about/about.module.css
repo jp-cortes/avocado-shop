@@ -1,6 +1,11 @@
 .container{
     display: grid;
     text-align: center;
+    width: auto;
+    height: fit-content;
+}
+.containerImg {
+    width: 700px;
 }
 .article {
     display: grid;
@@ -16,4 +21,19 @@
 }
 .article p {
     font-size: 20px;
+}
+
+@media screen and (max-width:426px) {
+    .container h1 {
+        font-size: 58px;
+    }
+    .article li {
+        font-size: 48px;
+    }
+    .article h3 {
+        font-size: 48px;
+    }
+    .article p {
+        font-size: 40px;
+    }
 }

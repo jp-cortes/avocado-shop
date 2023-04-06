@@ -84,6 +84,12 @@
   }
 @media (max-width: 600px) {
   .container {
-    width: 600px;
+    width: 800px;
+}
+.container a{
+  font-size: 30px;
+}
+.title {
+  font-size: 60px;
 }
 }

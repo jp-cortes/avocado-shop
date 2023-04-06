@@ -58,7 +58,7 @@ const About = () => {
         <h1>9 Surprising Facts About Avocados</h1>
 
         <figure>
-          <img
+          <img className={Styles.containerImg}
             src="https://images.pexels.com/photos/6102655/pexels-photo-6102655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="Avocados on a table"
           />

@@ -5,6 +5,9 @@ import { useCart } from 'store/Cart';
 import Logo from '../../public/images/icons/avocado.png'
 import Basket from '../../public/images/icons/wicker-basket.png'
 import Styles from './Navbar.module.css';
+
+
+
  export const Navbar = () => {
   const { count: cartCount } = useCart()
   return (

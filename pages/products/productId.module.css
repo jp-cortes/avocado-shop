@@ -3,7 +3,7 @@
 }
 .containerProduct {
     display: grid;
-    grid-template-columns: 0.5fr 1fr 0.5fr;
+    grid-template-columns: 0.5fr 1fr;
     grid-template-rows: auto auto;
     justify-content: center;
     justify-self: center;

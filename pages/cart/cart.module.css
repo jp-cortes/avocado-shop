@@ -4,7 +4,7 @@
     align-items: center;
 }
 .containerOfProducts {
-    min-width: 475px;
+    min-width: 575px;
 }
 .containerProduct {
     background-color: rgb(207, 225, 202);
@@ -57,11 +57,32 @@
     
  }
 
- @media (max-width: 490px) {
+ @media (max-width: 600px) {
     .container{
-        width: 600px;
+        width: 800px;
+        height: 100vh;
     }
     .containerOfProducts {
-        margin: 0 auto;
-    }  
+        width: 675px;
+        margin: 50px auto;
+        font-size: 30px;
+    } 
+    .containerOfProducts img{
+        align-self: center;
+        width: 80px;
+        height: 80px;
+        margin-left: 10px;
+    }
+    .eliminateProduct {
+        margin-right: 10px;
+    }
+    .emptyCart span{
+        font-size: 40px;
+    }
+    .checkoutButton {
+        width: auto;
+        height: auto;
+        font-size: 30px;
+    }
+  
 }
