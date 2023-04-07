@@ -1,5 +1,5 @@
 .cancel{
-    width: 1000px;
+    width: 700px;
   margin: auto;
   margin-top: 60px;
     background-color: #dcdcdc;
@@ -48,28 +48,22 @@
 
 @media (max-width:800px) {
   
-
-
-.cancel-wrapper{
-  min-height: 69vh;
-  width: 770px;
-}
+  .cancelWrapper{
+    height: 69vh;
+    width: 790px;
+  }
  .cancel {
-   width: 370px;
   margin-top: 100px;
   padding: 20px;
   height: 350px;
 }
 
 .cancel h2{
-  font-size: 17px;
+  font-size: 30px;
+}
+.button {
+  font-size: 24px;
 }
 
 
-}
-@media (max-width:600px) {
-  .cancel-wrapper{
-    min-height: 69vh;
-    width: 600px;
-  }
 }

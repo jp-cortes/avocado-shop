@@ -66,12 +66,13 @@ const ProductItem = ({ product }: { product: TProduct }) => {
     <Layout>
       <section className={Styles.container}>
         <div className={Styles.containerProduct}>
-          <Image src={product?.image} alt="" width={380} height={400} />
+          <Image src={product?.image} alt="" width={350} height={350} />
 
           <div className={Styles.containerProductInfo}>
             <div>
               <h3>{product?.name}</h3>
               <p>{`€ ${product?.price}`}</p>
+              <div className={Styles.containerProductInput}>
               <input
                 onChange={handleChange}
                 className={Styles.input}
@@ -86,11 +87,13 @@ const ProductItem = ({ product }: { product: TProduct }) => {
                 Add to Basket
               </button>
               <Link
-              className={Styles.checkoutButton}
               href={'/cart'}
               >
+                <button className={Styles.checkoutButton}>
                 Go to Basket
+                </button>
               </Link>
+              </div>
             </div>
             <p>{pushItem}</p>
             <h4>About this avocado</h4>

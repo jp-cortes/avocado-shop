@@ -1,7 +1,7 @@
 .footer {
     /* background-color: rgb(203, 201, 201); */
     border-top: 1px solid rgb(202, 198, 198);
-    width: 100vw;
+    width: auto;
     height: 200px;
     display: flex;
     flex-direction: column;
@@ -30,15 +30,16 @@
 }
 
 
-@media (max-width: 614px) {
+@media (max-width: 800px) {
     .footer {
         width: 700px;
+        height: 400px;
         padding-bottom: 20px;
         justify-content: space-between;
     }  
    
     .aboutContainer p{
-        font-size: 28px;
+        font-size: 24px;
      } 
      .credits {
         font-size: 20px;

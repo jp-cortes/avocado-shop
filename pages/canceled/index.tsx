@@ -11,15 +11,15 @@ const Canceled = () => {
 
   return (
     <Layout>
-    <div className={Styles["cancel-wrapper"]}>
-      <div className={Styles["cancel"]}>
-        <p className={Styles["icon"]}>
+    <div className={Styles.cancelWrapper}>
+      <div className={Styles.cancel}>
+        <p className={Styles.icon}>
           <BsFillBagXFill />
         </p>
         <h2>The Payment was cancelled</h2>
       
         <Link href="/">
-          <button type="button" className={Styles["button"]}>
+          <button type="button" className={Styles.button}>
             Back to Home Page
           </button>
         </Link>

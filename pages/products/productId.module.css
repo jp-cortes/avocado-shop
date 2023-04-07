@@ -3,21 +3,29 @@
 }
 .containerProduct {
     display: grid;
+    width: 100%;
     grid-template-columns: 0.5fr 1fr;
-    grid-template-rows: auto auto;
-    justify-content: center;
-    justify-self: center;
-    
+    grid-template-rows: auto auto;  
 }
 .containerProductInfo {
     grid-column: 2 ;
     grid-row: 1/2;
     text-align: center;
+    padding-right: 20px;
 }
 .containerProductInfo h3 {
     font-size: 28px;
 }
+.containerProductInput {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    height: auto;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
 .input {
+height: 30px;
 padding: 8px;
 font-weight: bold;
 border-radius: 8px;
@@ -30,7 +38,7 @@ margin-right: 12px;
     font-weight: bolder;
     padding: 8px;
     border-radius: 8px;
-    margin: 20px ;     
+    margin: 14px ;     
     cursor: pointer;
     border: none;
 }
@@ -49,7 +57,7 @@ margin-right: 12px;
     font-weight: bolder;
     padding: 8px;
     border-radius: 8px;
-    margin: 20px auto;     
+    margin: 14px auto;     
     text-decoration: none;
     border: none;
 }
@@ -61,11 +69,8 @@ margin-right: 12px;
     font-size: 20px;
     border-style: solid;
     margin: 0 auto;
-    max-width: 700px;
-    max-width: 500px;
-
-
-}
+    width: 600px;
+ }
 .table > thead  {
    
 background-color: rgb(98, 160, 79);
@@ -83,21 +88,61 @@ background-color: rgb(98, 160, 79);
     .tRight {
         padding: 8px;
     }
-   @media (max-width: 700px) {
+   @media (max-width: 800px) {
     .container{
-        width: 600px;
-        padding: 0 20px;
+        width: 700px;
+        padding: 0 50px;
+        margin: 0 auto;
     }
+
     .containerProduct {
-        justify-self: center;
+       
         display: flex;
         flex-direction: column;
-        
-        justify-content: center;
-        
+        justify-content: center;        
     }
+
     .containerProduct img {
         margin: 0 auto;
     }
-    
+
+    .containerProductInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .containerProductInfo h3{
+        font-size: 40px;
+    }
+
+    .containerProductInfo h4{
+        font-size: 32px;
+    }
+
+    .containerProductInfo p{
+        font-size: 28px;
+    }
+
+    .containerProductInput {
+        width: max-content;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .input {
+        width: 300px;
+        height: 30px;
+        font-size: 28px;
+    }
+    .button,
+    .buttonActive,
+    .checkoutButton {
+        font-size: 20px;
+    }
+    .table {
+        font-size: 28px;
+    }
    } 

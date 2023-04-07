@@ -17,21 +17,21 @@ const Success = () => {
 
   return (
     <Layout>
-    <div className={Styles["success-wrapper"]}>
+    <div className={Styles.successWrapper}>
       <div className={Styles.success}>
-        <p className={Styles["icon"]}>
+        <p className={Styles.icon}>
           <BsBagCheckFill />
         </p>
         <h2>Thank you for your order!</h2>
-        <p className={Styles["email-msg"]}>Check your email inbox for the receipt.</p>
+        <p className={Styles.emailMsg}>Check your email inbox for the receipt.</p>
         <p className={Styles.description}>
           If you have any questions, please email: {' '}
-           <a className="email" href="mailto:order@example.com">
+           <a className={Styles.email} href="mailto:order@example.com">
              avoshop@example.com
           </a>
         </p>
         <Link href="/">
-          <button type="button" className={Styles["button"]}>
+          <button type="button" className={Styles.button}>
             Continue Shopping
           </button>
         </Link>
