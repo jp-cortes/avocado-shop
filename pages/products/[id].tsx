@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 // export const getStaticPaths = async () => {
-//   const response = await fetch("https://avocado-shop.vercel/api/avo");
+//   const response = await fetch("https://avocado-shop.vercel.app/api/avo");
 //   const { data: product }: TAPIAvoResponse = await response.json();
 
 //   const paths = product.map(({ id }) => ({
@@ -23,7 +23,7 @@ import Link from "next/link";
 
 export const getServerSideProps= async ({ params }) => {
   const id = params?.id as string;
-  const response = await fetch(`https://avocado-shop.vercel/api/avo/${id}`);
+  const response = await fetch(`https://avocado-shop.vercel.app/api/avo/${id}`);
   const product: TProduct = await response.json();
   return {
     props: {

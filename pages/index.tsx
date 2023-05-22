@@ -9,7 +9,7 @@ import Logo from '../public/images/icons/avocado.png'
 
 
 export const getServerSideProps = async () => {
-  const response = await fetch("https://avocado-shop.vercel/api/avo");
+  const response = await fetch("https://avocado-shop.vercel.app/api/avo");
   const { data: products }: TAPIAvoResponse = await response.json();
   return {
     props: {
