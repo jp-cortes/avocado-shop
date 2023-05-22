@@ -8,7 +8,7 @@ import Layout from "@components/Layout/Layout";
 import Logo from '../public/images/icons/avocado.png'
 
 
-export const getServerSideProps = async () => {
+export const GetStaticProps = async () => {
   const response = await fetch("https://avocado-shop.vercel.app/api/avo");
   const { data: products }: TAPIAvoResponse = await response.json();
   return {
