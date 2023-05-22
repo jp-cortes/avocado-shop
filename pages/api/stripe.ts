@@ -24,7 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     currency: 'eur',
                     product_data: {
                         name: items.name,
-                        images: [`https://avocado-shop.vercel.app/${items.image}`],
+                        images: [`http://localhost:3000/${items.image}`],
                     },
                     unit_amount: amount * 100,
                 },

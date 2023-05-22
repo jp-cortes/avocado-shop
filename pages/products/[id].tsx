@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const getStaticPaths = async () => {
-  const response = await fetch("https://avocado-shop.vercel.app/api/avo");
+  const response = await fetch("http://localhost:3000/api/avo");
   const { data: product }: TAPIAvoResponse = await response.json();
 
   const paths = product.map(({ id }) => ({
