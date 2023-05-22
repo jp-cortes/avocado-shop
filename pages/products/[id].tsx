@@ -1,27 +1,27 @@
 import React, { useState } from "react";
 import { useCartMutations } from "store/Cart";
 import Styles from "./productId.module.css";
-import { GetStaticProps } from "next";
+// import { GetStaticProps } from "next";
 import Layout from "@components/Layout/Layout";
 import Image from "next/image";
 import Link from "next/link";
 
-export const getStaticPaths = async () => {
-  const response = await fetch("http://localhost:3000/api/avo");
-  const { data: product }: TAPIAvoResponse = await response.json();
+// export const getStaticPaths = async () => {
+//   const response = await fetch("http://localhost:3000/api/avo");
+//   const { data: product }: TAPIAvoResponse = await response.json();
 
-  const paths = product.map(({ id }) => ({
-    params: {
-      id, //name of the file [id]
-    },
-  }));
-  return {
-    paths,
-    fallback: false,
-  };
-};
+//   const paths = product.map(({ id }) => ({
+//     params: {
+//       id, //name of the file [id]
+//     },
+//   }));
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getServerSideProps= async ({ params }) => {
   const id = params?.id as string;
   const response = await fetch(`http://localhost:3000/api/avo/${id}`);
   const product: TProduct = await response.json();

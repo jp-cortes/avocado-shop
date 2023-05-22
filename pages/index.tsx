@@ -8,7 +8,7 @@ import Layout from "@components/Layout/Layout";
 import Logo from '../public/images/icons/avocado.png'
 
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const response = await fetch("http://localhost:3000/api/avo");
   const { data: products }: TAPIAvoResponse = await response.json();
   return {
