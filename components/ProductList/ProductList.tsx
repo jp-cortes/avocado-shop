@@ -6,7 +6,7 @@ type ProductListProps = {
     products: TProduct[];
 }
 const mapProducts = (products:TProduct[]) => 
-      products.map(({id, image, name, price}) => (
+      products?.map(({id, image, name, price}) => (
 
         <Link href={`/products/${id}`} legacyBehavior key={id} style={{ position: 'relative'}}>
           <div className={Styles.containerProduct}>

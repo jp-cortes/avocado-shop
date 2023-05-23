@@ -1,14 +1,13 @@
 import React from "react";
 import ProductList from "@components/ProductList/ProductList";
-import fetch from "isomorphic-unfetch";
-import Styles from "./index.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "@components/Layout/Layout";
 import Logo from '../public/images/icons/avocado.png'
+import Styles from "./index.module.css";
 
 
-export const GetStaticProps = async () => {
+export const getStaticProps = async () => {
   const response = await fetch("https://avocado-shop.vercel.app/api/avo");
   const { data: products }: TAPIAvoResponse = await response.json();
   return {
